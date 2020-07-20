@@ -36,6 +36,7 @@
 
     <b-table striped
     hover
+    responsive
     bordered
     :filter="filter"
     :filterIncludedFields="filterOn"

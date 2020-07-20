@@ -33,6 +33,7 @@
     </b-row>
 
     <b-table striped
+    responsive
     hover
     bordered
     :filter="filter"

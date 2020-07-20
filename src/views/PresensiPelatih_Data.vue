@@ -33,6 +33,7 @@
     <!-- Main table element -->
     <b-table
       striped
+      responsive
       show-empty
       stacked="md"
       :items="items"

@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1>Dashboard</h1>
+      <!-- <h1>Welcome</h1> -->
       <h2>Selamat Datang {{ datas.nama }}</h2>
   </div>
 </template>
