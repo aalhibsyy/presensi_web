@@ -1,9 +1,10 @@
 <template>
-<b-container fluid="lg">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <h1>Login</h1>
+    <div class="text-center">
+	<mdb-container class="d-flex justify-content-center">
+		<mdb-row>
+			<mdb-card reverse>
+        <mdb-card-body class="text-center" cascade>
+        <mdb-card-title><strong>Login</strong></mdb-card-title>
 
         <form @submit="logIn">
           <div class="text-left">
@@ -23,10 +24,12 @@
             <button class="btn btn-primary">Login</button>
           </div>
         </form>
-      </div>
+        </mdb-card-body>
+
+</mdb-card>
+		</mdb-row>
+	</mdb-container>
     </div>
-  </div>
-    </b-container>
 </template>
 
 <script>

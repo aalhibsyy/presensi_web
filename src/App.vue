@@ -1,26 +1,46 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/dashboard">Dashboard</router-link> |
-      <router-link to="/atlet">Atlet</router-link> |
-      <router-link to="/pelatih">Pelatih</router-link> |
-      <router-link to="/ukm">UKM</router-link> |
-      <router-link to="/ukm_atlet">UKM Atlet</router-link> |
-      <router-link to="/presensi_atlet">Presensi Atlet</router-link> |
-      <router-link to="/presensi_pelatih">Presensi Pelatih</router-link> |
-      <router-link to="/report">Report</router-link> |
+    <mdb-navbar color="cyan darken-1" dark>
+    <mdb-navbar-brand href="https://mdbootstrap.com/">
+    <router-link to="/">
+      <img src="https://aalhibsy.com/bl.png" height="30" alt="">
+       </router-link>
+    </mdb-navbar-brand>
+    <mdb-navbar-toggler>
+      <mdb-navbar-nav>
       
-      <span v-if="isLoggedIn === 'true'"> <router-link to="/logout">Logout</router-link> </span>
-      <span v-else> <router-link to="/login">Login</router-link> </span>
-    </div>
+     
+      <mdb-nav-item v-if="isLoggedIn" router to="/dashboard">Dashboard</mdb-nav-item> 
+      <mdb-nav-item v-if="isLoggedIn" router to="/atlet">Atlet</mdb-nav-item> 
+      <mdb-nav-item v-if="isLoggedIn" router to="/pelatih">Pelatih</mdb-nav-item> 
+      <mdb-nav-item v-if="isLoggedIn" router to="/ukm">UKM</mdb-nav-item> 
+      <mdb-nav-item v-if="isLoggedIn" router to="/ukm_atlet">UKM Atlet</mdb-nav-item> 
+      <mdb-nav-item v-if="isLoggedIn" router to="/presensi_atlet">Presensi Atlet</mdb-nav-item> 
+      <mdb-nav-item v-if="isLoggedIn" router to="/presensi_pelatih">Presensi Pelatih</mdb-nav-item> 
+      <mdb-nav-item v-if="isLoggedIn" router to="/report">Report</mdb-nav-item> 
+      
+   </mdb-navbar-nav>
+      <router-link v-if="isLoggedIn === 'true'" to="/logout">
+        <mdb-btn color="warning"  rounded>Logout</mdb-btn>
+      </router-link>
+      <router-link v-else to="/login">
+        <mdb-btn color="success"  rounded>Login</mdb-btn>
+      </router-link>
+   </mdb-navbar-toggler>
+   </mdb-navbar>
+   <br />
+   <br />
     <router-view/>
   </div>
 </template>
 
 <script>
+
 export default {
   name: "Menu",
+  components: {
+     
+    },
     data() {
         return {
           isLoggedIn : localStorage.getItem("LoggedUser")
@@ -44,6 +64,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -51,17 +73,16 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
 #nav {
   padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
-
     &.router-link-exact-active {
       color: #42b983;
     }
-  }
+  };
+  // background-image: linear-gradient(45deg,#00349b,rgba(0,92,255,.9219),#13abe5);
+  // margin-bottom: 50px;
 }
 </style>

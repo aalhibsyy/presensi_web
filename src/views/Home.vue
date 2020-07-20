@@ -1,9 +1,13 @@
 <template>
-  <div class="home">
+    <mdb-container>
     <img alt="Vue logo" width="10%" height="10%" src="../assets/logopresensi.png">
+    <br />
+    <br />
+    <h1>Website</h1>
     <h1>Presensi Training From Home</h1>
+    <h1>Universitas Budi Luhur</h1>
    
-  </div>
+   </mdb-container>
 </template>
 
 <script>
